@@ -214,7 +214,8 @@ with st.echo(code_location='below'):
         
     op_vars_lst_pos = list(map(lst_vars_to_pos, op_vars))
 
-    fig = modelo_roc(dataset, op_clas, selecionadas = op_vars_lst_pos, titulo = f'Predição de mortalidade materna - {op_clas}')
+    fig = modelo_roc(dataset, op_clas, selecionadas = op_vars_lst_pos, 
+                     titulo = f'Predição de mortalidade materna - {op_clas}')
 
     st.pyplot(fig)
 
