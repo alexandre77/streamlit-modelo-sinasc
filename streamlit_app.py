@@ -27,9 +27,9 @@ from sklearn.model_selection import train_test_split
 
 
 """
-## Modelo a partir da base SINASC
+## Modelo dinâmico a partir da base SINASC
 
-Escolha um classificador e selecione as variáveis SINASC para a avaliação de qualidade do modelo (AUC-ROC).
+Escolha um classificador e variáveis para a avaliação de qualidade do modelo (AUC-ROC)
 """
 
 
