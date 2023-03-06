@@ -108,6 +108,7 @@ def modelo_roc(dataset, classificador, variavel = [], selecionadas = [], titulo 
             nb = classifier.fit(X[train], y[train])
             y_probas = nb.predict_proba(X[test])
             skplt.plot_roc_curve(y[test], y_probas, ax=ax)
+            break
 
         ax.plot([0, 1], [0, 1], linestyle='--', lw=2, color='r',
                 label='Chance', alpha=.8)
@@ -162,6 +163,7 @@ def modelo_roc(dataset, classificador, variavel = [], selecionadas = [], titulo 
                 nb = classifier.fit(X[train], y[train])
                 y_probas = nb.predict_proba(X[test])
                 skplt.plot_roc_curve(y[test], y_probas, ax=ax)
+                break
 
             ax.plot([0, 1], [0, 1], linestyle='--', lw=2, color='r',
                     label='Chance', alpha=.8)
