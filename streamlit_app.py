@@ -14,7 +14,8 @@ from sklearn.ensemble import AdaBoostClassifier
 from sklearn.ensemble import ExtraTreesClassifier
 
 from sklearn.metrics import auc
-from sklearn.metrics import plot_roc_curve
+#from sklearn.metrics import plot_roc_curve
+from scikitplot.metrics import plot_roc_curve
 from sklearn.model_selection import StratifiedKFold
 
 from sklearn.model_selection import train_test_split
