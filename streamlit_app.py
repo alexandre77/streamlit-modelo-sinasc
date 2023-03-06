@@ -246,7 +246,7 @@ with st.echo(code_location='below'):
     st.write('Variáveis escolhidas:', op_vars)
         
     #op_vars_lst = list(op_vars.values())
-    op_vars_lst_pos = map(lst_vars_to_pos, op_vars)
+    op_vars_lst_pos = list(map(lst_vars_to_pos, op_vars))
 
     
     #fig = modelo_roc(dataset, variavel = ['consultas_ult', 'escmae2010_ult', 'estcivmae_ult', 'gestacao_ult', 'num_grav_1', 'num_grav_2', 'num_grav_n', 'idademae_ult', 'idanomal_ult', 'locnasc_ult', 'num_nasc_rep', 'num_parto_1', 'num_parto_2', 'num_filhos_peso_baixo', 'num_filhos_peso_insuf', 'num_filhos_peso_adeq', 'num_filhos_peso_macr', 'racacormae_ult', 'semagestac_ult', 'stcesparto_ult', 'sttrabpart_ult', 'tpapresent_ult', 'tpnascassi_ult', 'tprobson_ult', 'gestacao_reagrupada', 'qtdfilmort_reagrupada', 'st_alto_risco_mortalidade', 'obito'])
