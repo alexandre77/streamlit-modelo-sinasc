@@ -15,7 +15,8 @@ from sklearn.ensemble import ExtraTreesClassifier
 
 from sklearn.metrics import auc
 #from sklearn.metrics import plot_roc_curve
-from scikitplot.metrics import plot_roc_curve
+#from scikitplot.metrics import plot_roc_curve
+from scikitplot.classifiers import plot_roc_curve_with_cv
 from sklearn.model_selection import StratifiedKFold
 
 from sklearn.model_selection import train_test_split
@@ -106,9 +107,8 @@ def modelo_roc(dataset, classificador, variavel = [], selecionadas = [], titulo 
         fig, ax = plt.subplots()
         for i, (train, test) in enumerate(cv.split(X, y)):
             classifier.fit(X[train], y[train])
-            viz = plot_roc_curve(classifier, X[test], y[test],
-                                 name='ROC fold {}'.format(i),
-                                 alpha=0.3, lw=1, ax=ax)
+            #viz = plot_roc_curve(classifier, X[test], y[test], name='ROC fold {}'.format(i), alpha=0.3, lw=1, ax=ax)
+            viz = plot_roc_curve_with_cv(classifier, X[test], y[test], title='ROC fold {}'.format(i), alpha=0.3, lw=1, ax=ax)
             interp_tpr = np.interp(mean_fpr, viz.fpr, viz.tpr)
             interp_tpr[0] = 0.0
             tprs.append(interp_tpr)
@@ -183,9 +183,8 @@ def modelo_roc(dataset, classificador, variavel = [], selecionadas = [], titulo 
             fig, ax = plt.subplots()
             for i, (train, test) in enumerate(cv.split(X, y)):
                 classifier.fit(X[train], y[train])
-                viz = plot_roc_curve(classifier, X[test], y[test],
-                                     name='ROC fold {}'.format(i),
-                                     alpha=0.3, lw=1, ax=ax)
+                #viz = plot_roc_curve(classifier, X[test], y[test], name='ROC fold {}'.format(i), alpha=0.3, lw=1, ax=ax)
+                viz = plot_roc_curve_with_cv(classifier, X[test], y[test], title='ROC fold {}'.format(i), alpha=0.3, lw=1, ax=ax)
                 interp_tpr = np.interp(mean_fpr, viz.fpr, viz.tpr)
                 interp_tpr[0] = 0.0
                 tprs.append(interp_tpr)
