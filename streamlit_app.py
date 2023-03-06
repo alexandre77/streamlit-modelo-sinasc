@@ -108,7 +108,7 @@ def modelo_roc(dataset, classificador, variavel = [], selecionadas = [], titulo 
         for i, (train, test) in enumerate(cv.split(X, y)):
             classifier.fit(X[train], y[train])
             #viz = plot_roc_curve(classifier, X[test], y[test], name='ROC fold {}'.format(i), alpha=0.3, lw=1, ax=ax)
-            viz = plot_roc_curve_with_cv(classifier, X[test], y[test], title='ROC fold {}'.format(i), alpha=0.3, lw=1, ax=ax)
+            viz = plot_roc_curve_with_cv(classifier, X[test], y[test], title='ROC fold {}'.format(i), ax=ax)
             interp_tpr = np.interp(mean_fpr, viz.fpr, viz.tpr)
             interp_tpr[0] = 0.0
             tprs.append(interp_tpr)
@@ -184,7 +184,7 @@ def modelo_roc(dataset, classificador, variavel = [], selecionadas = [], titulo 
             for i, (train, test) in enumerate(cv.split(X, y)):
                 classifier.fit(X[train], y[train])
                 #viz = plot_roc_curve(classifier, X[test], y[test], name='ROC fold {}'.format(i), alpha=0.3, lw=1, ax=ax)
-                viz = plot_roc_curve_with_cv(classifier, X[test], y[test], title='ROC fold {}'.format(i), alpha=0.3, lw=1, ax=ax)
+                viz = plot_roc_curve_with_cv(classifier, X[test], y[test], title='ROC fold {}'.format(i), ax=ax)
                 interp_tpr = np.interp(mean_fpr, viz.fpr, viz.tpr)
                 interp_tpr[0] = 0.0
                 tprs.append(interp_tpr)
