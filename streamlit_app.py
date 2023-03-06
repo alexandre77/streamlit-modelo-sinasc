@@ -5,13 +5,13 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn import svm
+#from sklearn import svm
 from sklearn.neural_network import MLPClassifier
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import AdaBoostClassifier
-from sklearn.ensemble import ExtraTreesClassifier
+#from sklearn.neighbors import KNeighborsClassifier
+#from sklearn.tree import DecisionTreeClassifier
+#from sklearn.ensemble import AdaBoostClassifier
+#from sklearn.ensemble import ExtraTreesClassifier
 
 from sklearn.metrics import auc
 
@@ -187,7 +187,7 @@ dataset = planilha_em_dataset('database-dic-features.csv', ['consultas_ult', 'es
 with st.echo(code_location='below'):
     op_clas = st.selectbox(
          'Escolha o classificador',
-         ('MLP', 'SVM', 'Random Forest'))
+         ('MLP', 'Random Forest'))
     
     st.write('Classificador escolhido:', op_clas)
     
@@ -200,7 +200,8 @@ with st.echo(code_location='below'):
 
     op_vars = st.multiselect(
         'Escolha as variáveis',
-        lst_vars
+        lst_vars,
+        default = lst_vars
         )
 
     st.write('Variáveis escolhidas:', op_vars)
