@@ -27,14 +27,9 @@ from sklearn.model_selection import train_test_split
 
 
 """
-# Welcome to Streamlit!
+## Modelo a partir da base SINASC
 
-Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:
-
-If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
-forums](https://discuss.streamlit.io).
-
-In the meantime, below is an example of what you can do with just a few lines of code:
+Escolha um classificador e selecione as variáveis SINASC para a avaliação de qualidade do modelo (AUC-ROC).
 """
 
 
