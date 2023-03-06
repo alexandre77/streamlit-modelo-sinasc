@@ -203,11 +203,11 @@ with st.echo(code_location='below'):
         lst_vars,
         default = lst_vars
         )
-
-    st.write('Variáveis escolhidas:', op_vars)
         
     op_vars_lst_pos = list(map(lst_vars_to_pos, op_vars))
 
     fig = modelo_roc(dataset, op_clas, selecionadas = op_vars_lst_pos, titulo = f'Predição de mortalidade materna - {op_clas}')
 
     st.pyplot(fig)
+
+    st.write('Variáveis escolhidas:', op_vars)
